@@ -3,15 +3,6 @@ const whatsappNumber = "233557030685";
 const businessName = "KD Dealz";
 const currency = "GH₵"; 
 
-// Services that require a login from the customer
-const servicesRequiringLogin = [
-    "Apple Music",
-    "Netflix Shared Login",
-    "Netflix Personal Account",
-    "Snapchat+",
-    "iCloud Storage"
-];
-
 // 2. SELECT ALL BUTTONS
 const buttons = document.querySelectorAll('.option-btn, .order-btn');
 
@@ -31,10 +22,8 @@ buttons.forEach(button => {
         
         message += `\nPlease let me know the price in ${currency}.`;
         
-        // Add "send your login" instruction if the service requires it
-        if (servicesRequiringLogin.includes(service)) {
-            message += `\n\n🔑 I will also send my login details.`;
-        }
+        // Every service now asks for login
+        message += `\n\n🔑 I will also send my login details.`;
         
         message += `\n\nThank you!`;
         
