@@ -276,7 +276,7 @@ footer { text-align: center; padding: 60px 20px 20px; border-top: 1px solid var(
     color: white;
 }
 .primevideo-icon {
-    background: #ffffff;
-    padding: 6px;
-    border-radius: 12px;
+    background: rgba(0, 168, 225, 0.15);
+    color: #00A8E1;
+    font-size: 28px;
 }
