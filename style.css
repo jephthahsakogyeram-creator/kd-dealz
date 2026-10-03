@@ -79,11 +79,6 @@ nav a.active, nav a:hover { color: white; }
 .btn-netflix { background: var(--netflix); }
 .btn-youtube { background: var(--youtube); }
 
-/* TESTIMONIALS */
-.review-card { background: rgba(255, 255, 255, 0.02); text-align: left; }
-.review-card p { font-style: italic; color: var(--text-main); margin-bottom: 20px; line-height: 1.6; }
-.reviewer { display: flex; align-items: center; gap: 10px; color: var(--primary-btn); font-weight: 700; font-size: 14px; }
-.reviewer i { font-size: 20px; }
 
 /* FOOTER */
 footer { text-align: center; padding: 60px 20px 20px; border-top: 1px solid var(--border-color); margin-top: 80px; background: #0a0a0f; }
