@@ -13,6 +13,46 @@
     --youtube: #ff0000;
 }
 
+/* =========================================
+   KD DEALZ LOGO
+   ========================================= */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 6px;
+    font-weight: 800;
+    position: relative;
+}
+
+.logo-kd {
+    position: relative;
+    font-size: 26px;
+    font-weight: 800;
+    color: #a855f7;
+    font-style: italic;
+    letter-spacing: -1px;
+    padding-top: 8px;
+}
+
+.logo-dealz {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+    font-style: italic;
+    letter-spacing: -1px;
+    padding-top: 8px;
+}
+
+.crown-icon {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    font-size: 14px;
+    color: #a855f7;
+    transform: rotate(-15deg);
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.8);
+}
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
 body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.5; }
 
