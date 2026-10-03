@@ -252,3 +252,22 @@ footer {
     color: #000000;
     box-shadow: 0 10px 25px rgba(255, 252, 0, 0.2);
 }
+
+/* --- CARD NOTES (e.g., Apple ID requirement) --- */
+.card-note {
+    font-size: 12px;
+    color: #facc15; /* A nice warning yellow */
+    background: rgba(250, 204, 21, 0.1);
+    border: 1px solid rgba(250, 204, 21, 0.2);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.card-note i {
+    font-size: 14px;
+}
