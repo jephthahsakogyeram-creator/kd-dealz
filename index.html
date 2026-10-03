@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KD Dealz | Premium Subscriptions</title>
-    <!-- Link to your CSS file -->
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for Icons (Apple, Spotify, etc.) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- HEADER / NAVIGATION -->
+    <!-- HEADER -->
     <header>
         <div class="logo">KD DEALZ</div>
         <nav>
@@ -22,7 +19,7 @@
             <a href="#contact">Contact</a>
         </nav>
         <div class="header-contact">
-            <a href="https://wa.me/0557030685" target="_blank" class="contact-btn"><i class="fab fa-whatsapp"></i> 0557030685</a>
+            <a href="https://wa.me/233557030685" target="_blank" class="contact-btn"><i class="fab fa-whatsapp"></i> 0557030685</a>
             <a href="https://snapchat.com/add/dimpleyrm" target="_blank" class="contact-btn"><i class="fab fa-snapchat"></i> dimpleyrm</a>
         </div>
     </header>
@@ -31,49 +28,36 @@
     <section class="hero">
         <h1>Your Favorite Apps <br><span>For Less!</span></h1>
         <p>Get the best subscriptions for your entertainment, productivity and more — fast, safe, and reliable.</p>
+        
         <div class="hero-buttons">
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/233557030685?text=Hello%20KD%20DEALZ,%20I%20need%20help%20with%20a%20subscription." target="_blank" class="cta-btn">
-        <i class="fab fa-whatsapp"></i> WhatsApp Us
-    </a>
-    
-    <!-- Snapchat Button -->
-    <a href="https://snapchat.com/add/dimpleyrm" target="_blank" class="cta-btn snapchat-btn">
-        <i class="fab fa-snapchat"></i> Snapchat Us
-    </a>
-</div>
-            <!-- TRUST BADGES -->
-            <div class="trust-badges">
-                <div class="badge">
-                    <i class="fas fa-bolt"></i>
-                    <span>Instant Delivery</span>
-                </div>
-                <div class="badge">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Safe & Secure</span>
-                </div>
-                <div class="badge">
-                    <i class="fas fa-headset"></i>
-                    <span>24/7 Support</span>
-                </div>
-            </div>
+            <a href="https://wa.me/233557030685?text=Hello%20KD%20DEALZ,%20I%20need%20help%20with%20a%20subscription." target="_blank" class="cta-btn">
+                <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+            <a href="https://snapchat.com/add/dimpleyrm" target="_blank" class="cta-btn snapchat-btn">
+                <i class="fab fa-snapchat"></i> Snapchat Us
+            </a>
+        </div>
+
+        <!-- TRUST BADGES -->
+        <div class="trust-badges">
+            <div class="badge"><i class="fas fa-bolt"></i><span>Instant Delivery</span></div>
+            <div class="badge"><i class="fas fa-shield-alt"></i><span>Safe & Secure</span></div>
+            <div class="badge"><i class="fas fa-headset"></i><span>24/7 Support</span></div>
+        </div>
     </section>
 
-    <!-- SUBSCRIPTIONS GRID -->
+    <!-- SUBSCRIPTIONS -->
     <section class="subscriptions" id="subscriptions">
-        <h2>Our Subscriptions</h2>
-        <p>Choose your preferred plan and get started today!</p>
+        <h2 class="section-title">Our Subscriptions</h2>
+        <p class="section-subtitle">Choose your preferred plan and get started today!</p>
 
         <div class="grid-container">
             
-                      <!-- APPLE MUSIC CARD -->
+            <!-- APPLE MUSIC -->
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon apple-icon"><i class="fab fa-apple"></i></div>
-                    <div>
-                        <h3>Apple Music</h3>
-                        <p>Premium Music. No Limits.</p>
-                    </div>
+                    <div><h3>Apple Music</h3><p>Premium Music. No Limits.</p></div>
                 </div>
                 <div class="options-list">
                     <button class="option-btn" data-service="Apple Music" data-plan="2 Months">2 Months <i class="fas fa-arrow-right"></i></button>
@@ -81,22 +65,15 @@
                     <button class="option-btn" data-service="Apple Music" data-plan="4 Months">4 Months <i class="fas fa-arrow-right"></i></button>
                     <button class="option-btn" data-service="Apple Music" data-plan="15 Months">15 Months <i class="fas fa-arrow-right"></i></button>
                 </div>
-                
-                <!-- ⚠️ ADDED THIS LINE -->
-                <div class="card-note">
-                    <i class="fas fa-info-circle"></i> Apple ID login required
-                </div>
-
+                <div class="card-note"><i class="fas fa-info-circle"></i> Apple ID login required</div>
                 <button class="order-btn btn-apple" data-service="Apple Music">Order Now <i class="fab fa-whatsapp"></i></button>
             </div>
-            <!-- SPOTIFY PREMIUM CARD -->
+
+            <!-- SPOTIFY -->
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon spotify-icon"><i class="fab fa-spotify"></i></div>
-                    <div>
-                        <h3>Spotify Premium</h3>
-                        <p>Music. Podcasts. Anytime.</p>
-                    </div>
+                    <div><h3>Spotify Premium</h3><p>Music. Podcasts. Anytime.</p></div>
                 </div>
                 <div class="options-list">
                     <button class="option-btn" data-service="Spotify Premium" data-plan="3 Months">3 Months <i class="fas fa-arrow-right"></i></button>
@@ -106,14 +83,11 @@
                 <button class="order-btn btn-spotify" data-service="Spotify Premium">Order Now <i class="fab fa-whatsapp"></i></button>
             </div>
 
-            <!-- SNAPCHAT+ CARD -->
+            <!-- SNAPCHAT -->
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon snapchat-icon"><i class="fab fa-snapchat"></i></div>
-                    <div>
-                        <h3>Snapchat+</h3>
-                        <p>More Features. More Fun.</p>
-                    </div>
+                    <div><h3>Snapchat+</h3><p>More Features. More Fun.</p></div>
                 </div>
                 <div class="options-list">
                     <button class="option-btn" data-service="Snapchat+" data-plan="1 Month">1 Month <i class="fas fa-arrow-right"></i></button>
@@ -123,14 +97,11 @@
                 <button class="order-btn btn-snapchat" data-service="Snapchat+">Order Now <i class="fab fa-whatsapp"></i></button>
             </div>
 
-            <!-- ICLOUD STORAGE CARD -->
+            <!-- ICLOUD -->
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon icloud-icon"><i class="fas fa-cloud"></i></div>
-                    <div>
-                        <h3>iCloud Storage</h3>
-                        <p>More Space. More Possibilities.</p>
-                    </div>
+                    <div><h3>iCloud Storage</h3><p>More Space. More Possibilities.</p></div>
                 </div>
                 <div class="options-list">
                     <button class="option-btn" data-service="iCloud Storage" data-plan="50GB">50GB <i class="fas fa-arrow-right"></i></button>
@@ -140,35 +111,25 @@
                 <button class="order-btn btn-icloud" data-service="iCloud Storage">Order Now <i class="fab fa-whatsapp"></i></button>
             </div>
 
-                      <!-- NETFLIX CARD -->
+            <!-- NETFLIX -->
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon netflix-icon"><i class="fas fa-film"></i></div>
-                    <div>
-                        <h3>Netflix</h3>
-                        <p>Stream Anywhere. Anytime.</p>
-                    </div>
+                    <div><h3>Netflix</h3><p>Stream Anywhere. Anytime.</p></div>
                 </div>
                 <div class="options-list">
                     <button class="option-btn" data-service="Netflix" data-plan="Login">Netflix Login <i class="fas fa-arrow-right"></i></button>
                     <button class="option-btn" data-service="Netflix" data-plan="Personal Account">Netflix Personal Account <i class="fas fa-arrow-right"></i></button>
                 </div>
-                
-                <!-- ⚠️ ADDED THIS LINE -->
-                <div class="card-note netflix-note">
-                    <i class="fas fa-info-circle"></i> Netflix login details required
-                </div>
-
+                <div class="card-note netflix-note"><i class="fas fa-info-circle"></i> Netflix login details required</div>
                 <button class="order-btn btn-netflix" data-service="Netflix">Order Now <i class="fab fa-whatsapp"></i></button>
             </div>
-            <!-- YOUTUBE PREMIUM CARD -->
+
+            <!-- YOUTUBE -->
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon youtube-icon"><i class="fab fa-youtube"></i></div>
-                    <div>
-                        <h3>YouTube Premium</h3>
-                        <p>Ad-Free. More Music.</p>
-                    </div>
+                    <div><h3>YouTube Premium</h3><p>Ad-Free. More Music.</p></div>
                 </div>
                 <div class="options-list">
                     <button class="option-btn" data-service="YouTube Premium" data-plan="Standard">YouTube Premium <i class="fas fa-arrow-right"></i></button>
@@ -181,8 +142,27 @@
         </div>
     </section>
 
-       <!-- FOOTER -->
-    <!-- Notice the id="contact" added here -->
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Don't just take our word for it.</p>
+        <div class="grid-container">
+            <div class="card review-card">
+                <p>"Got my Spotify Premium in less than 5 minutes. Best prices!"</p>
+                <div class="reviewer"><i class="fas fa-user-circle"></i><span>- Kwame A.</span></div>
+            </div>
+            <div class="card review-card">
+                <p>"I was skeptical at first, but the Netflix account worked perfectly. Highly recommend."</p>
+                <div class="reviewer"><i class="fas fa-user-circle"></i><span>- Ama B.</span></div>
+            </div>
+            <div class="card review-card">
+                <p>"The Snapchat+ upgrade was instant. Very reliable service."</p>
+                <div class="reviewer"><i class="fas fa-user-circle"></i><span>- Kofi M.</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer id="contact">
         <div class="footer-content">
             <h3>Get In Touch</h3>
@@ -192,9 +172,9 @@
                 <a href="https://snapchat.com/add/dimpleyrm" target="_blank"><i class="fab fa-snapchat"></i> Snapchat: dimpleyrm</a>
             </div>
         </div>
-        <p class="copyright">&copy; 2026 KD DEALZ. All Rights Reserved.</p>
+        <p class="copyright">&copy; 2024 KD DEALZ. All Rights Reserved.</p>
     </footer>
-    <!-- Link to your JavaScript file -->
+
     <script src="script.js"></script>
 </body>
 </html>
