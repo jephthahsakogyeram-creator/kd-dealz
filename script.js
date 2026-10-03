@@ -26,3 +26,6 @@ buttons.forEach(button => {
         window.open(whatsappUrl, '_blank');
     });
 });
+
+// Auto-update copyright year
+document.getElementById('year').textContent = new Date().getFullYear();
