@@ -7,7 +7,6 @@
     --primary-btn: #8b5cf6;
     --apple: #ff2d55;
     --spotify: #1db954;
-
     --snapchat: #fffc00;
     --icloud: #007aff;
     --netflix: #e50914;
@@ -29,13 +28,10 @@ nav a.active, nav a:hover { color: white; }
 .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 15px; }
 .hero h1 span { color: var(--primary-btn); }
 .hero p { color: var(--text-muted); max-width: 600px; margin: 0 auto 30px; }
-
 .hero-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
-
 .cta-btn { background-color: var(--primary-btn); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: opacity 0.3s; }
 .cta-btn:hover { opacity: 0.9; }
 .cta-btn.snapchat-btn { background-color: var(--snapchat); color: #000000; }
-
 .trust-badges { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
 .badge { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 14px; font-weight: 600; }
 .badge i { color: var(--primary-btn); font-size: 18px; }
@@ -64,11 +60,14 @@ nav a.active, nav a:hover { color: white; }
 .options-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; flex-grow: 1; }
 .option-btn { display: flex; justify-content: space-between; align-items: center; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); padding: 12px 16px; border-radius: 8px; font-size: 14px; color: white; cursor: pointer; transition: background 0.2s; }
 .option-btn:hover { background: rgba(255, 255, 255, 0.08); }
+.price { color: var(--primary-btn); font-weight: 700; font-size: 13px; }
 
 /* CARD NOTES */
 .card-note { font-size: 12px; color: #facc15; background: rgba(250, 204, 21, 0.1); border: 1px solid rgba(250, 204, 21, 0.2); padding: 8px 12px; border-radius: 6px; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; font-weight: 600; }
 .card-note i { font-size: 14px; }
 .netflix-note { color: #e50914; background: rgba(229, 9, 20, 0.1); border: 1px solid rgba(229, 9, 20, 0.2); }
+.snapchat-note { color: #fffc00; background: rgba(255, 252, 0, 0.1); border: 1px solid rgba(255, 252, 0, 0.2); }
+.icloud-note { color: #007aff; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }
 
 /* BUTTONS */
 .order-btn { width: 100%; padding: 14px; border: none; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; color: white; transition: opacity 0.3s; }
@@ -79,7 +78,6 @@ nav a.active, nav a:hover { color: white; }
 .btn-icloud { background: var(--icloud); }
 .btn-netflix { background: var(--netflix); }
 .btn-youtube { background: var(--youtube); }
-
 
 /* FOOTER */
 footer { text-align: center; padding: 60px 20px 20px; border-top: 1px solid var(--border-color); margin-top: 80px; background: #0a0a0f; }
@@ -96,18 +94,4 @@ footer { text-align: center; padding: 60px 20px 20px; border-top: 1px solid var(
     header { flex-direction: column; gap: 15px; }
     .hero h1 { font-size: 32px; }
     .header-contact { display: none; }
-}
-
-/* --- SNAPCHAT SPECIFIC NOTE --- */
-.snapchat-note {
-    color: #fffc00; /* Snapchat Yellow */
-    background: rgba(255, 252, 0, 0.1);
-    border: 1px solid rgba(255, 252, 0, 0.2);
-}
-
-/* --- ICLOUD SPECIFIC NOTE --- */
-.icloud-note {
-    color: #007aff; /* iCloud Blue */
-    background: rgba(0, 122, 255, 0.1);
-    border: 1px solid rgba(0, 122, 255, 0.2);
 }
