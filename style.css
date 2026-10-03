@@ -254,3 +254,24 @@ footer { text-align: center; padding: 60px 20px 20px; border-top: 1px solid var(
     background: rgba(255, 0, 0, 0.1);
     border: 1px solid rgba(255, 0, 0, 0.2);
 }
+/* --- OFFICIAL LOGO IMAGES --- */
+.card-icon img {
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
+}
+
+/* --- PRIME VIDEO STYLES --- */
+.primevideo-icon { 
+    background: rgba(0, 168, 225, 0.1); 
+    color: #00A8E1; 
+}
+
+.primevideo-note {
+    color: #00A8E1;
+    background: rgba(0, 168, 225, 0.1);
+    border: 1px solid rgba(0, 168, 225, 0.2);
+}
+
+.btn-primevideo {
+    background: #00A8E1;
+    color: white;
+}
