@@ -40,7 +40,7 @@ nav a.active, nav a:hover { color: white; }
 .badge i { color: var(--primary-btn); font-size: 18px; }
 
 /* SUBSCRIPTIONS */
-.subscriptions, .testimonials { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+.subscriptions { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
 .section-title { text-align: center; font-size: 32px; margin-bottom: 5px; }
 .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 50px; }
 .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
