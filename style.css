@@ -7,6 +7,7 @@
     --primary-btn: #8b5cf6;
     --apple: #ff2d55;
     --spotify: #1db954;
+
     --snapchat: #fffc00;
     --icloud: #007aff;
     --netflix: #e50914;
@@ -95,4 +96,11 @@ footer { text-align: center; padding: 60px 20px 20px; border-top: 1px solid var(
     header { flex-direction: column; gap: 15px; }
     .hero h1 { font-size: 32px; }
     .header-contact { display: none; }
+}
+
+/* --- SNAPCHAT SPECIFIC NOTE --- */
+.snapchat-note {
+    color: #fffc00; /* Snapchat Yellow */
+    background: rgba(255, 252, 0, 0.1);
+    border: 1px solid rgba(255, 252, 0, 0.2);
 }
