@@ -24,18 +24,123 @@ nav a.active, nav a:hover { color: white; }
 .contact-btn { background: #1a1a24; border: 1px solid var(--border-color); color: white; padding: 8px 16px; border-radius: 20px; font-size: 13px; text-decoration: none; margin-left: 10px; }
 
 /* HERO */
-.hero { text-align: center; padding: 100px 20px; background: radial-gradient(circle at top, rgba(139, 92, 246, 0.15) 0%, transparent 60%); }
-.hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 15px; }
-.hero h1 span { color: var(--primary-btn); }
-.hero p { color: var(--text-muted); max-width: 600px; margin: 0 auto 30px; }
-.hero-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
-.cta-btn { background-color: var(--primary-btn); color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: opacity 0.3s; }
-.cta-btn:hover { opacity: 0.9; }
-.cta-btn.snapchat-btn { background-color: var(--snapchat); color: #000000; }
-.trust-badges { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-.badge { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 14px; font-weight: 600; }
-.badge i { color: var(--primary-btn); font-size: 18px; }
+.hero { 
+    padding: 80px 5%; 
+    background: radial-gradient(circle at 70% 50%, rgba(139, 92, 246, 0.25) 0%, transparent 60%);
+    overflow: hidden;
+    position: relative;
+}
 
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero-text { text-align: left; }
+.hero-subtitle { 
+    font-size: 12px; 
+    letter-spacing: 2px; 
+    color: var(--primary-btn); 
+    font-weight: 700; 
+    margin-bottom: 15px; 
+}
+.hero h1 { font-size: 52px; font-weight: 800; margin-bottom: 20px; line-height: 1.1; }
+.hero h1 span { color: var(--primary-btn); }
+.hero-text > p { color: var(--text-muted); margin-bottom: 30px; font-size: 16px; }
+
+.trust-badges { display: flex; justify-content: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+.badge { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 13px; font-weight: 600; }
+.badge i { color: var(--primary-btn); font-size: 16px; }
+
+/* PHONE MOCKUP & FLOATING ICONS */
+.hero-visual {
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-mockup {
+    width: 220px;
+    height: 440px;
+    background: #000;
+    border-radius: 35px;
+    border: 6px solid #1a1a24;
+    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.4), inset 0 0 20px rgba(139, 92, 246, 0.1);
+    padding: 15px 10px;
+    position: relative;
+    z-index: 5;
+}
+
+.phone-screen {
+    background: linear-gradient(180deg, #151520 0%, #0a0a0f 100%);
+    height: 100%;
+    border-radius: 22px;
+    padding: 20px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.app-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+}
+
+.app-row:nth-child(1) i { color: #ff2d55; }
+.app-row:nth-child(2) i { color: #1db954; }
+.app-row:nth-child(3) i { color: #fffc00; }
+.app-row:nth-child(4) i { color: #e50914; }
+.app-row:nth-child(5) i { color: #ff0000; }
+
+/* Floating Icons */
+.floating-icon {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 10;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.icon-apple-float { background: #ff2d55; color: white; top: 20px; left: 30px; animation-delay: 0s; }
+.icon-spotify-float { background: #1db954; color: white; top: 40px; right: 20px; animation-delay: 0.5s; }
+.icon-snapchat-float { background: #fffc00; color: black; bottom: 120px; right: 0px; animation-delay: 1s; }
+.icon-netflix-float { background: #000; color: #e50914; bottom: 60px; left: 10px; animation-delay: 1.5s; border: 2px solid #e50914; }
+.icon-youtube-float { background: #ff0000; color: white; bottom: 30px; right: 40px; animation-delay: 2s; }
+
+/* Responsive Hero */
+@media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; text-align: center; }
+    .hero-text { text-align: center; }
+    .trust-badges { justify-content: center; }
+    .hero h1 { font-size: 38px; }
+    .hero-visual { height: 450px; }
+    .phone-mockup { width: 190px; height: 380px; }
+    .floating-icon { width: 45px; height: 45px; font-size: 20px; }
+}
 /* SUBSCRIPTIONS */
 .subscriptions { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
 .section-title { text-align: center; font-size: 32px; margin-bottom: 5px; }
