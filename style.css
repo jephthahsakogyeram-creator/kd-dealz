@@ -1,3 +1,4 @@
+/* 1. RESET & VARIABLES */
 :root {
     --bg-dark: #0a0a0f;
     --bg-card: #151520;
@@ -5,6 +6,8 @@
     --text-muted: #9ca3af;
     --border-color: #2a2a35;
     --primary-btn: #8b5cf6;
+    
+    /* Brand Colors */
     --apple: #ff2d55;
     --spotify: #1db954;
     --snapchat: #fffc00;
@@ -13,187 +16,133 @@
     --youtube: #ff0000;
 }
 
-/* =========================================
-   KD DEALZ LOGO
-   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+/* 2. HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(10, 10, 15, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 .logo {
-    display: flex;
-    align-items: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: #a855f7;
+}
+
+nav a {
+    color: var(--text-muted);
     text-decoration: none;
-    gap: 6px;
-    font-weight: 800;
-    position: relative;
+    margin: 0 15px;
+    font-weight: 600;
 }
-
-.logo-kd {
-    position: relative;
-    font-size: 26px;
-    font-weight: 800;
-    color: #a855f7;
-    font-style: italic;
-    letter-spacing: -1px;
-    padding-top: 8px;
-}
-
-.logo-dealz {
-    font-size: 26px;
-    font-weight: 800;
-    color: #ffffff;
-    font-style: italic;
-    letter-spacing: -1px;
-    padding-top: 8px;
-}
-
-.crown-icon {
-    position: absolute;
-    top: -10px;
-    left: 0px;
-    font-size: 14px;
-    color: #a855f7;
-    transform: rotate(-15deg);
-    text-shadow: 0 0 8px rgba(168, 85, 247, 0.8);
-}
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.5; }
-
-/* HEADER */
-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; border-bottom: 1px solid var(--border-color); background: rgba(10, 10, 15, 0.9); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
-.logo { font-size: 24px; font-weight: 800; color: #a855f7; }
-nav a { color: var(--text-muted); text-decoration: none; margin: 0 15px; font-weight: 600; }
 nav a.active, nav a:hover { color: white; }
-.contact-btn { background: #1a1a24; border: 1px solid var(--border-color); color: white; padding: 8px 16px; border-radius: 20px; font-size: 13px; text-decoration: none; margin-left: 10px; }
 
-/* HERO */
-.hero { 
-    padding: 80px 5%; 
-    background: radial-gradient(circle at 70% 50%, rgba(139, 92, 246, 0.25) 0%, transparent 60%);
-    overflow: hidden;
-    position: relative;
+.contact-btn {
+    background: #1a1a24;
+    border: 1px solid var(--border-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    text-decoration: none;
+    margin-left: 10px;
 }
 
-.hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
+/* 3. HERO SECTION */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: radial-gradient(circle at top, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
 }
 
-.hero-text { text-align: left; }
-.hero-subtitle { 
-    font-size: 12px; 
-    letter-spacing: 2px; 
-    color: var(--primary-btn); 
-    font-weight: 700; 
-    margin-bottom: 15px; 
-}
-.hero h1 { font-size: 52px; font-weight: 800; margin-bottom: 20px; line-height: 1.1; }
+.hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 15px; }
 .hero h1 span { color: var(--primary-btn); }
-.hero-text > p { color: var(--text-muted); margin-bottom: 30px; font-size: 16px; }
+.hero p { color: var(--text-muted); max-width: 600px; margin: 0 auto 30px; }
 
-.trust-badges { display: flex; justify-content: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
-.badge { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 13px; font-weight: 600; }
-.badge i { color: var(--primary-btn); font-size: 16px; }
-
-/* PHONE MOCKUP & FLOATING ICONS */
-.hero-visual {
-    position: relative;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.phone-mockup {
-    width: 220px;
-    height: 440px;
-    background: #000;
-    border-radius: 35px;
-    border: 6px solid #1a1a24;
-    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.4), inset 0 0 20px rgba(139, 92, 246, 0.1);
-    padding: 15px 10px;
-    position: relative;
-    z-index: 5;
-}
-
-.phone-screen {
-    background: linear-gradient(180deg, #151520 0%, #0a0a0f 100%);
-    height: 100%;
-    border-radius: 22px;
-    padding: 20px 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.app-row {
-    display: flex;
+.cta-btn {
+    background-color: var(--primary-btn);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 10px 12px;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 600;
-    color: white;
+}
+/* --- TRUST BADGES --- */
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
-.app-row:nth-child(1) i { color: #ff2d55; }
-.app-row:nth-child(2) i { color: #1db954; }
-.app-row:nth-child(3) i { color: #fffc00; }
-.app-row:nth-child(4) i { color: #e50914; }
-.app-row:nth-child(5) i { color: #ff0000; }
-
-/* Floating Icons */
-.floating-icon {
-    position: absolute;
-    width: 55px;
-    height: 55px;
-    border-radius: 15px;
+.badge {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    z-index: 10;
-    animation: float 3s ease-in-out infinite;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 600;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+.badge i {
+    color: var(--primary-btn);
+    font-size: 18px;
 }
 
-.icon-apple-float { background: #ff2d55; color: white; top: 20px; left: 30px; animation-delay: 0s; }
-.icon-spotify-float { background: #1db954; color: white; top: 40px; right: 20px; animation-delay: 0.5s; }
-.icon-snapchat-float { background: #fffc00; color: black; bottom: 120px; right: 0px; animation-delay: 1s; }
-.icon-netflix-float { background: #000; color: #e50914; bottom: 60px; left: 10px; animation-delay: 1.5s; border: 2px solid #e50914; }
-.icon-youtube-float { background: #ff0000; color: white; bottom: 30px; right: 40px; animation-delay: 2s; }
-
-/* Responsive Hero */
-@media (max-width: 900px) {
-    .hero-content { grid-template-columns: 1fr; text-align: center; }
-    .hero-text { text-align: center; }
-    .trust-badges { justify-content: center; }
-    .hero h1 { font-size: 38px; }
-    .hero-visual { height: 450px; }
-    .phone-mockup { width: 190px; height: 380px; }
-    .floating-icon { width: 45px; height: 45px; font-size: 20px; }
-}
-/* SUBSCRIPTIONS */
+/* 4. SUBSCRIPTIONS GRID */
 .subscriptions { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
-.section-title { text-align: center; font-size: 32px; margin-bottom: 5px; }
-.section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 50px; }
-.grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+.subscriptions h2 { text-align: center; font-size: 32px; margin-bottom: 5px; }
+.subscriptions > p { text-align: center; color: var(--text-muted); margin-bottom: 50px; }
 
-/* CARDS */
-.card { background-color: var(--bg-card); border-radius: 16px; padding: 25px; border: 1px solid var(--border-color); display: flex; flex-direction: column; }
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* 5. CARDS */
+.card {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
 .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
-.card-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+.card-icon {
+    width: 50px; height: 50px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+}
 .card-header h3 { font-size: 18px; }
 .card-header p { font-size: 12px; color: var(--text-muted); }
 
+/* Icon Background Colors */
 .apple-icon { background: rgba(255, 45, 85, 0.1); color: var(--apple); }
 .spotify-icon { background: rgba(29, 185, 84, 0.1); color: var(--spotify); }
 .snapchat-icon { background: rgba(255, 252, 0, 0.1); color: var(--snapchat); }
@@ -201,22 +150,25 @@ nav a.active, nav a:hover { color: white; }
 .netflix-icon { background: rgba(229, 9, 20, 0.1); color: var(--netflix); }
 .youtube-icon { background: rgba(255, 0, 0, 0.1); color: var(--youtube); }
 
-/* OPTIONS */
-.options-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; flex-grow: 1; }
-.option-btn { display: flex; justify-content: space-between; align-items: center; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); padding: 12px 16px; border-radius: 8px; font-size: 14px; color: white; cursor: pointer; transition: background 0.2s; }
+/* Option Buttons */
+.options-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; flex-grow: 1; }
+.option-btn {
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color);
+    padding: 12px 16px; border-radius: 8px; font-size: 14px;
+    color: white; cursor: pointer; transition: background 0.2s;
+}
 .option-btn:hover { background: rgba(255, 255, 255, 0.08); }
-.price { color: var(--primary-btn); font-weight: 700; font-size: 13px; }
 
-/* CARD NOTES */
-.card-note { font-size: 12px; color: #facc15; background: rgba(250, 204, 21, 0.1); border: 1px solid rgba(250, 204, 21, 0.2); padding: 8px 12px; border-radius: 6px; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; font-weight: 600; }
-.card-note i { font-size: 14px; }
-.netflix-note { color: #e50914; background: rgba(229, 9, 20, 0.1); border: 1px solid rgba(229, 9, 20, 0.2); }
-.snapchat-note { color: #fffc00; background: rgba(255, 252, 0, 0.1); border: 1px solid rgba(255, 252, 0, 0.2); }
-.icloud-note { color: #007aff; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }
-
-/* BUTTONS */
-.order-btn { width: 100%; padding: 14px; border: none; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; color: white; transition: opacity 0.3s; }
+/* Main Order Buttons */
+.order-btn {
+    width: 100%; padding: 14px; border: none; border-radius: 8px;
+    font-weight: 700; font-size: 15px; cursor: pointer;
+    display: flex; justify-content: center; align-items: center; gap: 8px;
+    color: white; transition: opacity 0.3s;
+}
 .order-btn:hover { opacity: 0.8; }
+
 .btn-apple { background: linear-gradient(90deg, #ff2d55, #ff5e7e); }
 .btn-spotify { background: var(--spotify); color: #000; }
 .btn-snapchat { background: var(--snapchat); color: #000; }
@@ -224,59 +176,523 @@ nav a.active, nav a:hover { color: white; }
 .btn-netflix { background: var(--netflix); }
 .btn-youtube { background: var(--youtube); }
 
-/* FOOTER */
-footer { text-align: center; padding: 60px 20px 20px; border-top: 1px solid var(--border-color); margin-top: 80px; background: #0a0a0f; }
-.footer-content h3 { font-size: 24px; margin-bottom: 10px; }
-.footer-content p { color: var(--text-muted); margin-bottom: 25px; }
-.footer-contact-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
-.footer-contact-links a { display: flex; align-items: center; gap: 10px; background: var(--bg-card); border: 1px solid var(--border-color); padding: 12px 24px; border-radius: 8px; color: white; text-decoration: none; font-weight: 600; transition: background 0.3s; }
-.footer-contact-links a:hover { background: #2a2a35; }
-.footer-contact-links i { font-size: 20px; color: var(--primary-btn); }
-.copyright { color: var(--text-muted); font-size: 12px; border-top: 1px solid var(--border-color); padding-top: 20px; }
+/* --- FOOTER & CONTACT SECTION --- */
+footer {
+    text-align: center;
+    padding: 60px 20px 20px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 80px;
+    background: #0a0a0f;
+}
 
-/* RESPONSIVE */
+.footer-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.footer-contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-contact-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.footer-contact-links a:hover {
+    background: #2a2a35;
+}
+
+.footer-contact-links i {
+    font-size: 20px;
+    color: var(--primary-btn);
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 12px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+/* Responsive */
 @media (max-width: 768px) {
     header { flex-direction: column; gap: 15px; }
     .hero h1 { font-size: 32px; }
     .header-contact { display: none; }
 }
-
-/* --- SPOTIFY SPECIFIC NOTE --- */
-.spotify-note {
-    color: #1db954; /* Spotify Green */
-    background: rgba(29, 185, 84, 0.1);
-    border: 1px solid rgba(29, 185, 84, 0.2);
+/* --- HERO BUTTONS --- */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-/* --- YOUTUBE SPECIFIC NOTE --- */
-.youtube-note {
-    color: #ff0000; /* YouTube Red */
-    background: rgba(255, 0, 0, 0.1);
-    border: 1px solid rgba(255, 0, 0, 0.2);
-}
-/* --- OFFICIAL LOGO IMAGES --- */
-.card-icon img {
-    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
+/* Change the Snapchat button color to yellow to match the brand */
+.cta-btn.snapchat-btn {
+    background-color: var(--snapchat); 
+    color: #000000;
+    box-shadow: 0 10px 25px rgba(255, 252, 0, 0.2);
 }
 
-/* --- PRIME VIDEO STYLES --- */
-.primevideo-icon { 
-    background: rgba(0, 168, 225, 0.1); 
-    color: #00A8E1; 
+/* =========================================
+   NEW HOMEPAGE STYLES
+   ========================================= */
+
+body.home-page {
+    background: radial-gradient(circle at 50% 30%, rgba(139, 92, 246, 0.15) 0%, #0a0a0f 60%);
+    min-height: 100vh;
 }
 
-.primevideo-note {
-    color: #00A8E1;
-    background: rgba(0, 168, 225, 0.1);
-    border: 1px solid rgba(0, 168, 225, 0.2);
+/* Hero centered layout */
+.hero-home {
+    text-align: center;
+    padding: 40px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.btn-primevideo {
-    background: #00A8E1;
+.hero-home .trust-badges {
+    justify-content: center;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-btn);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    margin-bottom: 40px;
+    transition: opacity 0.3s;
+}
+
+.contact-link:hover { opacity: 0.8; }
+
+/* Centered phone hero */
+.hero-visual-center {
+    position: relative;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+/* Services grid on homepage */
+.services-grid-home {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    text-decoration: none;
     color: white;
+    font-weight: 600;
+    font-size: 13px;
+    transition: transform 0.2s, border-color 0.2s, background 0.2s;
+    text-align: center;
 }
-.primevideo-icon {
-    background: rgba(0, 168, 225, 0.15);
-    color: #00A8E1;
+
+.service-tile:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-btn);
+    background: rgba(139, 92, 246, 0.08);
+}
+
+.tile-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 28px;
 }
+
+.tile-apple { background: rgba(255, 45, 85, 0.12); color: #ff2d55; }
+.tile-spotify { background: rgba(29, 185, 84, 0.12); color: #1db954; }
+.tile-snapchat { background: rgba(255, 252, 0, 0.12); color: #fffc00; }
+.tile-icloud { background: rgba(0, 122, 255, 0.12); color: #007aff; }
+.tile-netflix { background: rgba(229, 9, 20, 0.12); }
+.tile-youtube { background: rgba(255, 0, 0, 0.12); color: #ff0000; }
+.tile-prime { background: rgba(0, 168, 225, 0.15); color: #00A8E1; }
+
+/* Make app rows clickable in phone */
+.phone-screen .app-row {
+    text-decoration: none;
+    color: white;
+    transition: background 0.2s;
+}
+.phone-screen .app-row:hover {
+    background: rgba(139, 92, 246, 0.15);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .hero-visual-center { height: 420px; }
+    .phone-mockup { width: 190px; height: 380px; }
+    .floating-icon { width: 45px; height: 45px; font-size: 20px; }
+    .services-grid-home { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* =========================================
+   HOMEPAGE STYLES (fully isolated with home- prefix)
+   ========================================= */
+
+body.home-page {
+    background: radial-gradient(circle at 50% 40%, rgba(139, 92, 246, 0.18) 0%, #0a0a0f 55%);
+    min-height: 100vh;
+}
+
+/* --- Home Hero (badges + contact link) --- */
+.home-hero {
+    text-align: center;
+    padding: 50px 20px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.home-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.home-badge i {
+    color: var(--primary-btn);
+    font-size: 17px;
+}
+
+.home-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-btn);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: opacity 0.3s;
+}
+.home-contact-link:hover { opacity: 0.8; }
+
+/* --- Phone Visual --- */
+.home-visual-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px 60px;
+}
+
+.home-visual-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-phone {
+    width: 230px;
+    height: 460px;
+    background: #000;
+    border-radius: 38px;
+    border: 7px solid #1a1a24;
+    box-shadow:
+        0 0 60px rgba(139, 92, 246, 0.55),
+        0 0 120px rgba(139, 92, 246, 0.25),
+        inset 0 0 20px rgba(139, 92, 246, 0.15);
+    padding: 15px 10px;
+    position: relative;
+    z-index: 5;
+}
+
+.home-phone-screen {
+    background: linear-gradient(180deg, #151520 0%, #0a0a0f 100%);
+    height: 100%;
+    border-radius: 24px;
+    padding: 22px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow: hidden;
+}
+
+.home-app-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.home-app-row:hover {
+    background: rgba(139, 92, 246, 0.15);
+    transform: translateX(3px);
+}
+
+.home-app-row:nth-child(1) i { color: #ff2d55; }
+.home-app-row:nth-child(2) i { color: #1db954; }
+.home-app-row:nth-child(3) i { color: #fffc00; }
+.home-app-row:nth-child(4) i { color: #e50914; }
+.home-app-row:nth-child(5) i { color: #ff0000; }
+
+/* --- Floating Icons --- */
+.home-float {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    animation: homeFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes homeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.home-float-apple {
+    background: #ff2d55; color: white;
+    top: 30px; left: 0; animation-delay: 0s;
+}
+.home-float-spotify {
+    background: #1db954; color: white;
+    top: 60px; right: 10px; animation-delay: 0.5s;
+}
+.home-float-snapchat {
+    background: #fffc00; color: black;
+    bottom: 130px; right: 0; animation-delay: 1s;
+}
+.home-float-netflix {
+    background: #000; color: #e50914;
+    border: 2px solid #e50914;
+    bottom: 60px; left: 10px; animation-delay: 1.5s;
+}
+.home-float-youtube {
+    background: #ff0000; color: white;
+    bottom: 20px; right: 40px; animation-delay: 2s;
+}
+
+/* --- Services Grid --- */
+.home-services {
+    padding: 40px 20px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.home-section-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.home-section-sub {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+.home-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+}
+
+.home-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 22px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    transition: transform 0.25s, border-color 0.25s, background 0.25s;
+    text-align: center;
+}
+
+.home-tile:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-btn);
+    background: rgba(139, 92, 246, 0.08);
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.2);
+}
+
+.home-tile-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.home-tile-apple { background: rgba(255, 45, 85, 0.12); }
+.home-tile-spotify { background: rgba(29, 185, 84, 0.12); color: #1db954; }
+.home-tile-snapchat { background: rgba(255, 252, 0, 0.12); color: #fffc00; }
+.home-tile-icloud { background: rgba(0, 122, 255, 0.12); color: #007aff; }
+.home-tile-netflix { background: rgba(229, 9, 20, 0.12); }
+.home-tile-youtube { background: rgba(255, 0, 0, 0.12); color: #ff0000; }
+.home-tile-prime { background: rgba(0, 168, 225, 0.15); color: #00A8E1; }
+
+/* --- Mobile Tweaks --- */
+@media (max-width: 600px) {
+    .home-visual-wrapper { height: 460px; }
+    .home-phone { width: 200px; height: 400px; }
+    .home-app-row { padding: 10px 12px; font-size: 13px; }
+    .home-float { width: 50px; height: 50px; font-size: 22px; }
+    .home-services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* =========================================
+   DETAIL PAGE STYLES
+   ========================================= */
+
+.detail-page {
+    padding: 40px 20px 80px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--primary-btn); }
+
+.detail-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.detail-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.detail-icon-apple { background: rgba(255, 45, 85, 0.12); }
+
+.detail-header h1 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.detail-header p {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.detail-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+/* Reuse the same .option-btn, .card-note, .order-btn styles from earlier */
+
+/* Mobile */
+@media (max-width: 600px) {
+    .detail-card { padding: 22px 18px; }
+    .detail-header h1 { font-size: 20px; }
+    .detail-icon { width: 55px; height: 55px; }
+}
+
+/* --- DETAIL PAGE ICON COLORS --- */
+.detail-icon-spotify { background: rgba(29, 185, 84, 0.12); color: #1db954; }
+.detail-icon-snapchat { background: rgba(255, 252, 0, 0.12); color: #fffc00; }
+.detail-icon-icloud { background: rgba(0, 122, 255, 0.12); color: #007aff; }
+.detail-icon-netflix { background: rgba(229, 9, 20, 0.12); }
+.detail-icon-youtube { background: rgba(255, 0, 0, 0.12); color: #ff0000; }
+.detail-icon-prime { background: rgba(0, 168, 225, 0.15); color: #00A8E1; }

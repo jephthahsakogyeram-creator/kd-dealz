@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KD Dealz | Premium Subscriptions</title>
+    <title>KD Dealz | Premium Subscriptions For Less</title>
+    <meta name="description" content="Get Apple Music, Spotify, Netflix, YouTube Premium, Snapchat+ and more at unbeatable prices. Instant delivery, safe & secure.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home-page">
 
     <!-- HEADER -->
     <header>
-        <a href="#" class="logo">
-    <span class="logo-kd">
-        <i class="fas fa-crown crown-icon"></i>
-        KD
-    </span>
-    <span class="logo-dealz">DEALZ</span>
-</a>
+        <a href="index.html" class="logo">
+            <span class="logo-kd"><i class="fas fa-crown crown-icon"></i>KD</span>
+            <span class="logo-dealz">DEALZ</span>
+        </a>
         <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#subscriptions">Subscriptions</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="#services">Subscriptions</a>
             <a href="#contact">Contact</a>
         </nav>
         <div class="header-contact">
@@ -30,176 +28,85 @@
         </div>
     </header>
 
-       <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <!-- Left side: Text -->
-            <div class="hero-text">
-                <p class="hero-subtitle">PREMIUM DIGITAL SUBSCRIPTIONS</p>
-                <h1>Your Favorite Apps <br><span>For Less!</span></h1>
-                <p>Get the best subscriptions for your entertainment, productivity and more — fast, safe, and reliable.</p>
-                
-                <div class="trust-badges">
-                    <div class="badge"><i class="fas fa-bolt"></i><span>Instant Delivery</span></div>
-                    <div class="badge"><i class="fas fa-shield-alt"></i><span>Safe & Secure</span></div>
-                    <div class="badge"><i class="fas fa-headset"></i><span>24/7 Support</span></div>
-                </div>
+    <!-- HOME HERO -->
+    <section class="home-hero">
 
-                <a href="https://wa.me/233557030685?text=Hello%20KD%20DEALZ,%20I%20need%20help%20with%20a%20subscription." target="_blank" class="cta-btn">
-                    <i class="fab fa-whatsapp"></i> Contact Us Now &rarr;
-                </a>
-            </div>
+        <div class="home-trust-badges">
+            <div class="home-badge"><i class="fas fa-bolt"></i><span>Instant Delivery</span></div>
+            <div class="home-badge"><i class="fas fa-shield-alt"></i><span>Safe &amp; Secure</span></div>
+            <div class="home-badge"><i class="fas fa-headset"></i><span>24/7 Support</span></div>
+        </div>
 
-            <!-- Right side: Phone Mockup -->
-            <div class="hero-visual">
-                <!-- Floating Icons -->
-                <div class="floating-icon icon-apple-float"><i class="fab fa-apple"></i></div>
-                <div class="floating-icon icon-spotify-float"><i class="fab fa-spotify"></i></div>
-                <div class="floating-icon icon-snapchat-float"><i class="fab fa-snapchat"></i></div>
-                <div class="floating-icon icon-netflix-float"><i class="fas fa-film"></i></div>
-                <div class="floating-icon icon-youtube-float"><i class="fab fa-youtube"></i></div>
+        <a href="https://wa.me/233557030685?text=Hello%20KD%20DEALZ,%20I%20need%20help%20with%20a%20subscription." target="_blank" class="home-contact-link">
+            <i class="fab fa-whatsapp"></i> Contact Us Now &rarr;
+        </a>
 
-                <!-- Phone -->
-                <div class="phone-mockup">
-                    <div class="phone-screen">
-                        <div class="app-row"><i class="fab fa-apple"></i> Apple Music</div>
-                        <div class="app-row"><i class="fab fa-spotify"></i> Spotify</div>
-                        <div class="app-row"><i class="fab fa-snapchat"></i> Snapchat</div>
-                        <div class="app-row"><i class="fas fa-film"></i> Netflix</div>
-                        <div class="app-row"><i class="fab fa-youtube"></i> YouTube</div>
-                    </div>
+    </section>
+
+    <!-- PHONE VISUAL -->
+    <section class="home-visual-section">
+        <div class="home-visual-wrapper">
+            <!-- Floating Icons -->
+            <div class="home-float home-float-apple"><i class="fab fa-apple"></i></div>
+            <div class="home-float home-float-spotify"><i class="fab fa-spotify"></i></div>
+            <div class="home-float home-float-snapchat"><i class="fab fa-snapchat"></i></div>
+            <div class="home-float home-float-netflix"><i class="fas fa-film"></i></div>
+            <div class="home-float home-float-youtube"><i class="fab fa-youtube"></i></div>
+
+            <!-- Phone -->
+            <div class="home-phone">
+                <div class="home-phone-screen">
+                    <a href="apple-music.html" class="home-app-row"><i class="fab fa-apple"></i> Apple Music</a>
+                    <a href="spotify.html" class="home-app-row"><i class="fab fa-spotify"></i> Spotify</a>
+                    <a href="snapchat.html" class="home-app-row"><i class="fab fa-snapchat"></i> Snapchat</a>
+                    <a href="netflix-shared.html" class="home-app-row"><i class="fas fa-film"></i> Netflix</a>
+                    <a href="youtube.html" class="home-app-row"><i class="fab fa-youtube"></i> YouTube</a>
                 </div>
             </div>
         </div>
     </section>
-    <!-- SUBSCRIPTIONS -->
-    <section class="subscriptions" id="subscriptions">
-        <h2 class="section-title">Our Subscriptions</h2>
-        <p class="section-subtitle">Choose your preferred plan and get started today!</p>
 
-        <div class="grid-container">
-            
-            <!-- APPLE MUSIC -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon apple-icon"><img src="https://cdn.simpleicons.org/applemusic/FF2D55" alt="Apple Music" width="28" height="28"></div>
-                    <div><h3>Apple Music</h3><p>Premium Music. No Limits.</p></div>
-                </div>
-                <div class="options-list">
-                    <button class="option-btn" data-service="Apple Music" data-plan="2 Months">2 Months <span class="price">GH₵90</span></button>
-                    <button class="option-btn" data-service="Apple Music" data-plan="3 Months">3 Months <span class="price">GH₵120</span></button>
-                    <button class="option-btn" data-service="Apple Music" data-plan="4 Months">4 Months <span class="price">GH₵160</span></button>
-                    <button class="option-btn" data-service="Apple Music" data-plan="5 Months">5 Months <span class="price">GH₵190</span></button>
-                    <button class="option-btn" data-service="Apple Music" data-plan="15 Months">15 Months <span class="price">GH₵450</span></button>
-                </div>
-                <div class="card-note"><i class="fas fa-info-circle"></i> Apple ID login required</div>
-                <button class="order-btn btn-apple" data-service="Apple Music">Order Now <i class="fab fa-whatsapp"></i></button>
-            </div>
+    <!-- SERVICES GRID -->
+    <section class="home-services" id="services">
+        <h2 class="home-section-title">Our Subscriptions</h2>
+        <p class="home-section-sub">Tap a service to see available plans</p>
 
-                      <!-- SPOTIFY -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon spotify-icon"><i class="fab fa-spotify"></i></div>
-                    <div><h3>Spotify Premium</h3><p>Music. Podcasts. Anytime.</p></div>
-                </div>
-                <div class="options-list">
-                    <button class="option-btn" data-service="Spotify Premium" data-plan="3 Months">3 Months <span class="price">GH₵130</span></button>
-                    <button class="option-btn" data-service="Spotify Premium" data-plan="6 Months">6 Months <span class="price">GH₵140</span></button>
-                    <button class="option-btn" data-service="Spotify Premium" data-plan="1 Year">1 Year <span class="price">GH₵420</span></button>
-                </div>
-                
-                <!-- ⚠️ ADDED THIS -->
-                <div class="card-note spotify-note"><i class="fas fa-info-circle"></i> Spotify login required</div>
+        <div class="home-services-grid">
+            <a href="apple-music.html" class="home-tile">
+                <div class="home-tile-icon home-tile-apple"><img src="https://cdn.simpleicons.org/applemusic/FF2D55" alt="Apple Music" width="32" height="32"></div>
+                <span>Apple Music</span>
+            </a>
+            <a href="spotify.html" class="home-tile">
+                <div class="home-tile-icon home-tile-spotify"><i class="fab fa-spotify"></i></div>
+                <span>Spotify</span>
+            </a>
+            <a href="snapchat.html" class="home-tile">
+                <div class="home-tile-icon home-tile-snapchat"><i class="fab fa-snapchat"></i></div>
+                <span>Snapchat+</span>
+            </a>
+            <a href="icloud.html" class="home-tile">
+                <div class="home-tile-icon home-tile-icloud"><i class="fas fa-cloud"></i></div>
+                <span>iCloud</span>
+            </a>
+            <a href="netflix-shared.html" class="home-tile">
+                <div class="home-tile-icon home-tile-netflix"><img src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix" width="30" height="30"></div>
+                <span>Netflix Shared</span>
+            </a>
+            <a href="netflix-personal.html" class="home-tile">
+                <div class="home-tile-icon home-tile-netflix"><img src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix" width="30" height="30"></div>
+                <span>Netflix Personal</span>
+            </a>
+            <a href="youtube.html" class="home-tile">
+                <div class="home-tile-icon home-tile-youtube"><i class="fab fa-youtube"></i></div>
+                <span>YouTube Premium</span>
+            </a>
+            <a href="prime-video.html" class="home-tile">
+                <div class="home-tile-icon home-tile-prime"><i class="fab fa-amazon"></i></div>
+                <span>Prime Video</span>
+            </a>
+        </div>
+    </section>
 
-                <button class="order-btn btn-spotify" data-service="Spotify Premium">Order Now <i class="fab fa-whatsapp"></i></button>
-            </div>
-            <!-- SNAPCHAT+ -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon snapchat-icon"><i class="fab fa-snapchat"></i></div>
-                    <div><h3>Snapchat+</h3><p>More Features. More Fun.</p></div>
-                </div>
-                <div class="options-list">
-                    <button class="option-btn" data-service="Snapchat+" data-plan="1 Month">1 Month <span class="price">GH₵60</span></button>
-                    <button class="option-btn" data-service="Snapchat+" data-plan="1 Year">1 Year <span class="price">GH₵190</span></button>
-                    <button class="option-btn" data-service="Snapchat+" data-plan="Upgrade to Business">Upgrade to Business <span class="price">GH₵100</span></button>
-                    <button class="option-btn" data-service="Snapchat+" data-plan="Snapchat Login">Snapchat Login <span class="price">Contact Us</span></button>
-                </div>
-                <div class="card-note snapchat-note"><i class="fas fa-info-circle"></i> Snapchat login required for logins</div>
-                <button class="order-btn btn-snapchat" data-service="Snapchat+">Order Now <i class="fab fa-whatsapp"></i></button>
-            </div>
-
-            <!-- ICLOUD STORAGE -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon icloud-icon"><i class="fas fa-cloud"></i></div>
-                    <div><h3>iCloud Storage</h3><p>More Space. More Possibilities.</p></div>
-                </div>
-                <div class="options-list">
-                    <button class="option-btn" data-service="iCloud Storage" data-plan="50GB - 3 Months">50GB - 3 Months <span class="price">GH₵80</span></button>
-                    <button class="option-btn" data-service="iCloud Storage" data-plan="50GB - 4 Months">50GB - 4 Months <span class="price">GH₵100</span></button>
-                    <button class="option-btn" data-service="iCloud Storage" data-plan="200GB - 2 Months">200GB - 2 Months <span class="price">GH₵150</span></button>
-                </div>
-                <div class="card-note icloud-note"><i class="fas fa-info-circle"></i> Apple ID login required</div>
-                <button class="order-btn btn-icloud" data-service="iCloud Storage">Order Now <i class="fab fa-whatsapp"></i></button>
-            </div>
-
-                       <!-- NETFLIX SHARED LOGIN -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon netflix-icon"><img src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix" width="28" height="28"></div>
-                    <div><h3>Netflix Shared Login</h3><p>Watch Together. Save More.</p></div>
-                </div>
-                <div class="options-list">
-                    <button class="option-btn" data-service="Netflix Shared Login" data-plan="2 Months">2 Months <span class="price">GH₵140</span></button>
-                    <button class="option-btn" data-service="Netflix Shared Login" data-plan="3 Months">3 Months <span class="price">GH₵180</span></button>
-                </div>
-                <div class="card-note netflix-note"><i class="fas fa-info-circle"></i> Netflix login details required</div>
-                <button class="order-btn btn-netflix" data-service="Netflix Shared Login">Order Now <i class="fab fa-whatsapp"></i></button>
-            </div>
-                       <!-- NETFLIX PERSONAL ACCOUNT -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon netflix-icon"><img src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix" width="28" height="28"></div>
-                    <div><h3>Netflix Personal</h3><p>Your Own Private Account.</p></div>
-                </div>
-                <div class="options-list">
-                    <button class="option-btn" data-service="Netflix Personal Account" data-plan="1 Month Basic">1 Month - Basic <span class="price">GH₵140</span></button>
-                    <button class="option-btn" data-service="Netflix Personal Account" data-plan="1 Month Standard">1 Month - Standard (1080p) <span class="price">GH₵185</span></button>
-                    <button class="option-btn" data-service="Netflix Personal Account" data-plan="1 Month Premium">1 Month - Premium (4K) <span class="price">GH₵240</span></button>
-                </div>
-                <div class="card-note netflix-note"><i class="fas fa-info-circle"></i> Netflix login details required</div>
-                <button class="order-btn btn-netflix" data-service="Netflix Personal Account">Order Now <i class="fab fa-whatsapp"></i></button>
-            </div>
-            <!-- YOUTUBE PREMIUM -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon youtube-icon"><i class="fab fa-youtube"></i></div>
-                    <div><h3>YouTube Premium</h3><p>Ad-Free. More Music.</p></div>
-                </div>
-                <div class="options-list">
-                    <button class="option-btn" data-service="YouTube Premium" data-plan="1 Month">1 Month <span class="price">GH₵80</span></button>
-                </div>
-                
-                <!-- ⚠️ ADDED THIS -->
-                <div class="card-note youtube-note"><i class="fas fa-info-circle"></i> YouTube login required</div>
-
-                <button class="order-btn btn-youtube" data-service="YouTube Premium">Order Now <i class="fab fa-whatsapp"></i></button>
-            </div>
-                        <!-- PRIME VIDEO -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon primevideo-icon"><i class="fab fa-amazon"></i></div>
-                    <div><h3>Prime Video</h3><p>Endless Movies & TV Shows.</p></div>
-                </div>
-                <div class="options-list">
-                    <button class="option-btn" data-service="Prime Video" data-plan="1 Month">1 Month <span class="price">GH₵ —</span></button>
-                    <button class="option-btn" data-service="Prime Video" data-plan="3 Months">3 Months <span class="price">GH₵ —</span></button>
-                    <button class="option-btn" data-service="Prime Video" data-plan="1 Year">1 Year <span class="price">GH₵ —</span></button>
-                </div>
-                <div class="card-note primevideo-note"><i class="fas fa-info-circle"></i> Amazon login required</div>
-                <button class="order-btn btn-primevideo" data-service="Prime Video">Order Now <i class="fab fa-whatsapp"></i></button>
-            </div>
     <!-- FOOTER -->
     <footer id="contact">
         <div class="footer-content">
@@ -210,8 +117,7 @@
                 <a href="https://snapchat.com/add/dimpleyrm" target="_blank"><i class="fab fa-snapchat"></i> Snapchat: dimpleyrm</a>
             </div>
         </div>
-     
-       <p class="copyright">&copy; <span id="year"></span> KD DEALZ. All Rights Reserved.</p></p>
+        <p class="copyright">&copy; 2026 KD DEALZ. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
