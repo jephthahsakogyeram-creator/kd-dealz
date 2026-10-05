@@ -1,21 +1,24 @@
-/* 1. RESET & VARIABLES */
 :root {
-    --bg-dark: #0a0a0f;
-    --bg-card: #151520;
+    --bg-dark: #04060d;
+    --bg-secondary: #0a0f1a;
     --text-main: #ffffff;
-    --text-muted: #9ca3af;
-    --border-color: #2a2a35;
-    --primary-btn: #8b5cf6;
-    
-    /* Brand Colors */
+    --text-muted: #7d8ba3;
+    --primary: #0ea5e9;
+    --primary-glow: rgba(14, 165, 233, 0.45);
+
+    --glass-bg: rgba(140, 180, 255, 0.05);
+    --glass-bg-hover: rgba(140, 180, 255, 0.09);
+    --glass-border: rgba(140, 180, 255, 0.1);
+    --glass-border-strong: rgba(140, 180, 255, 0.18);
+
     --apple: #ff2d55;
     --spotify: #1db954;
     --snapchat: #fffc00;
     --icloud: #007aff;
     --netflix: #e50914;
     --youtube: #ff0000;
+    --prime: #00a8e1;
 }
-
 * {
     margin: 0;
     padding: 0;
