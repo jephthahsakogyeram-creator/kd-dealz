@@ -718,3 +718,23 @@ body::before {
     50%  { transform: translate(3%, -3%) scale(1.08); }
     100% { transform: translate(-3%, 3%) scale(1); }
 }
+
+/* --- App row icons (images + FontAwesome) --- */
+.home-app-row img {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.1));
+    flex-shrink: 0;
+}
+
+.home-app-row i {
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Row color for each service (for the icons) */
+.home-app-row:nth-child(1) i { color: #ff2d55; }   /* Apple Music */
+.home-app-row:nth-child(2) i { color: #1db954; }   /* Spotify */
+.home-app-row:nth-child(3) i { color: #fffc00; }   /* Snapchat */
+.home-app-row:nth-child(4) i { color: #e50914; }   /* Netflix */
+.home-app-row:nth-child(5) i { color: #00a8e1; }   /* Prime Video */
+.home-app-row:nth-child(6) i { color: #ff0000; }   /* YouTube */
