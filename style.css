@@ -1,3 +1,8 @@
+/* =========================================
+   KD DEALZ — iOS 26 Liquid Glass UI
+   Cool Blue Theme
+   ========================================= */
+
 :root {
     --bg-dark: #12141c;
     --bg-secondary: #1a1d28;
@@ -19,371 +24,148 @@
     --youtube: #ff0000;
     --prime: #00a8e1;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     line-height: 1.5;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* 2. HEADER */
+/* Aurora background */
+body::before {
+    content: '';
+    position: fixed;
+    inset: -50%;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.20), transparent 42%),
+        radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.14), transparent 42%),
+        radial-gradient(circle at 50% 80%, rgba(99, 179, 237, 0.14), transparent 45%);
+    animation: auroraShift 25s ease-in-out infinite alternate;
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+@keyframes auroraShift {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(3%, -3%) scale(1.08); }
+    100% { transform: translate(-3%, 3%) scale(1); }
+}
+
+/* =========================================
+   HEADER — Glass bar
+   ========================================= */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    border-bottom: 1px solid var(--border-color);
-    background: rgba(10, 10, 15, 0.9);
+    padding: 14px 5%;
+    background: rgba(18, 20, 28, 0.65);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid var(--glass-border);
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
+/* --- LOGO (Finger Paint brush font) --- */
 .logo {
-    font-size: 24px;
-    font-weight: 800;
-    color: #a855f7;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    text-decoration: none;
 }
 
+.logo-kd {
+    position: relative;
+    font-family: 'Finger Paint', cursive;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--primary);
+    letter-spacing: 0;
+    padding-top: 12px;
+    text-transform: uppercase;
+    line-height: 1;
+    text-shadow: 0 0 20px var(--primary-glow);
+}
+
+.logo-dealz {
+    font-family: 'Finger Paint', cursive;
+    font-size: 26px;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0;
+    padding-top: 12px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.crown-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    color: var(--primary);
+    transform: rotate(-15deg);
+    text-shadow: 0 0 12px var(--primary-glow);
+    z-index: 1;
+}
+
+nav { display: flex; gap: 5px; }
 nav a {
     color: var(--text-muted);
     text-decoration: none;
-    margin: 0 15px;
     font-weight: 600;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.25s;
 }
-nav a.active, nav a:hover { color: white; }
+nav a:hover { color: white; background: var(--glass-bg); }
+nav a.active { color: white; background: var(--glass-bg); }
 
+.header-contact { display: flex; gap: 8px; }
 .contact-btn {
-    background: #1a1a24;
-    border: 1px solid var(--border-color);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 13px;
+    font-weight: 600;
     text-decoration: none;
-    margin-left: 10px;
-}
-
-/* 3. HERO SECTION */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: radial-gradient(circle at top, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
-}
-
-.hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 15px; }
-.hero h1 span { color: var(--primary-btn); }
-.hero p { color: var(--text-muted); max-width: 600px; margin: 0 auto 30px; }
-
-.cta-btn {
-    background-color: var(--primary-btn);
-    color: white;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-/* --- TRUST BADGES --- */
-.trust-badges {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-}
-
-.badge {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: var(--text-muted);
-    font-size: 14px;
-    font-weight: 600;
+    transition: all 0.25s;
+    backdrop-filter: blur(10px);
 }
-
-.badge i {
-    color: var(--primary-btn);
-    font-size: 18px;
-}
-
-/* 4. SUBSCRIPTIONS GRID */
-.subscriptions { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
-.subscriptions h2 { text-align: center; font-size: 32px; margin-bottom: 5px; }
-.subscriptions > p { text-align: center; color: var(--text-muted); margin-bottom: 50px; }
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-}
-
-/* 5. CARDS */
-.card {
-    background-color: var(--bg-card);
-    border-radius: 16px;
-    padding: 25px;
-    border: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-}
-
-.card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
-.card-icon {
-    width: 50px; height: 50px; border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 24px;
-}
-.card-header h3 { font-size: 18px; }
-.card-header p { font-size: 12px; color: var(--text-muted); }
-
-/* Icon Background Colors */
-.apple-icon { background: rgba(255, 45, 85, 0.1); color: var(--apple); }
-.spotify-icon { background: rgba(29, 185, 84, 0.1); color: var(--spotify); }
-.snapchat-icon { background: rgba(255, 252, 0, 0.1); color: var(--snapchat); }
-.icloud-icon { background: rgba(0, 122, 255, 0.1); color: var(--icloud); }
-.netflix-icon { background: rgba(229, 9, 20, 0.1); color: var(--netflix); }
-.youtube-icon { background: rgba(255, 0, 0, 0.1); color: var(--youtube); }
-
-/* Option Buttons */
-.options-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; flex-grow: 1; }
-.option-btn {
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color);
-    padding: 12px 16px; border-radius: 8px; font-size: 14px;
-    color: white; cursor: pointer; transition: background 0.2s;
-}
-.option-btn:hover { background: rgba(255, 255, 255, 0.08); }
-
-/* Main Order Buttons */
-.order-btn {
-    width: 100%; padding: 14px; border: none; border-radius: 8px;
-    font-weight: 700; font-size: 15px; cursor: pointer;
-    display: flex; justify-content: center; align-items: center; gap: 8px;
-    color: white; transition: opacity 0.3s;
-}
-.order-btn:hover { opacity: 0.8; }
-
-.btn-apple { background: linear-gradient(90deg, #ff2d55, #ff5e7e); }
-.btn-spotify { background: var(--spotify); color: #000; }
-.btn-snapchat { background: var(--snapchat); color: #000; }
-.btn-icloud { background: var(--icloud); }
-.btn-netflix { background: var(--netflix); }
-.btn-youtube { background: var(--youtube); }
-
-/* --- FOOTER & CONTACT SECTION --- */
-footer {
-    text-align: center;
-    padding: 60px 20px 20px;
-    border-top: 1px solid var(--border-color);
-    margin-top: 80px;
-    background: #0a0a0f;
-}
-
-.footer-content h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.footer-content p {
-    color: var(--text-muted);
-    margin-bottom: 25px;
-}
-
-.footer-contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-
-.footer-contact-links a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 12px 24px;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s;
-}
-
-.footer-contact-links a:hover {
-    background: #2a2a35;
-}
-
-.footer-contact-links i {
-    font-size: 20px;
-    color: var(--primary-btn);
-}
-
-.copyright {
-    color: var(--text-muted);
-    font-size: 12px;
-    border-top: 1px solid var(--border-color);
-    padding-top: 20px;
-}
-/* Responsive */
-@media (max-width: 768px) {
-    header { flex-direction: column; gap: 15px; }
-    .hero h1 { font-size: 32px; }
-    .header-contact { display: none; }
-}
-/* --- HERO BUTTONS --- */
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-/* Change the Snapchat button color to yellow to match the brand */
-.cta-btn.snapchat-btn {
-    background-color: var(--snapchat); 
-    color: #000000;
-    box-shadow: 0 10px 25px rgba(255, 252, 0, 0.2);
+.contact-btn:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-strong);
+    transform: translateY(-1px);
 }
 
 /* =========================================
-   NEW HOMEPAGE STYLES
+   HOMEPAGE HERO
    ========================================= */
-
-body.home-page {
-    background: radial-gradient(circle at 50% 30%, rgba(139, 92, 246, 0.15) 0%, #0a0a0f 60%);
-    min-height: 100vh;
-}
-
-/* Hero centered layout */
-.hero-home {
-    text-align: center;
-    padding: 40px 20px 80px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.hero-home .trust-badges {
-    justify-content: center;
-    margin-bottom: 25px;
-    margin-top: 20px;
-}
-
-.contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--primary-btn);
-    font-weight: 700;
-    font-size: 16px;
-    text-decoration: none;
-    margin-bottom: 40px;
-    transition: opacity 0.3s;
-}
-
-.contact-link:hover { opacity: 0.8; }
-
-/* Centered phone hero */
-.hero-visual-center {
-    position: relative;
-    height: 480px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 60px;
-}
-
-/* Services grid on homepage */
-.services-grid-home {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 15px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.service-tile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 20px 12px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    font-size: 13px;
-    transition: transform 0.2s, border-color 0.2s, background 0.2s;
-    text-align: center;
-}
-
-.service-tile:hover {
-    transform: translateY(-4px);
-    border-color: var(--primary-btn);
-    background: rgba(139, 92, 246, 0.08);
-}
-
-.tile-icon {
-    width: 55px;
-    height: 55px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-}
-
-.tile-apple { background: rgba(255, 45, 85, 0.12); color: #ff2d55; }
-.tile-spotify { background: rgba(29, 185, 84, 0.12); color: #1db954; }
-.tile-snapchat { background: rgba(255, 252, 0, 0.12); color: #fffc00; }
-.tile-icloud { background: rgba(0, 122, 255, 0.12); color: #007aff; }
-.tile-netflix { background: rgba(229, 9, 20, 0.12); }
-.tile-youtube { background: rgba(255, 0, 0, 0.12); color: #ff0000; }
-.tile-prime { background: rgba(0, 168, 225, 0.15); color: #00A8E1; }
-
-/* Make app rows clickable in phone */
-.phone-screen .app-row {
-    text-decoration: none;
-    color: white;
-    transition: background 0.2s;
-}
-.phone-screen .app-row:hover {
-    background: rgba(139, 92, 246, 0.15);
-}
-
-/* Mobile adjustments */
-@media (max-width: 600px) {
-    .hero-visual-center { height: 420px; }
-    .phone-mockup { width: 190px; height: 380px; }
-    .floating-icon { width: 45px; height: 45px; font-size: 20px; }
-    .services-grid-home { grid-template-columns: repeat(2, 1fr); }
-}
-
-/* =========================================
-   HOMEPAGE STYLES (fully isolated with home- prefix)
-   ========================================= */
-
-body.home-page {
-    background: radial-gradient(circle at 50% 40%, rgba(139, 92, 246, 0.18) 0%, #0a0a0f 55%);
-    min-height: 100vh;
-}
-
-/* --- Home Hero (badges + contact link) --- */
 .home-hero {
     text-align: center;
-    padding: 50px 20px 20px;
+    padding: 60px 20px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -391,7 +173,7 @@ body.home-page {
 .home-trust-badges {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 12px;
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
@@ -400,30 +182,49 @@ body.home-page {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: var(--text-muted);
-    font-size: 14px;
+    color: var(--text-main);
+    font-size: 13px;
     font-weight: 600;
+    padding: 10px 18px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: all 0.3s;
 }
-
-.home-badge i {
-    color: var(--primary-btn);
-    font-size: 17px;
+.home-badge:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-strong);
+    transform: translateY(-2px);
 }
+.home-badge i { color: var(--primary); font-size: 15px; }
 
 .home-contact-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--primary-btn);
+    color: var(--primary);
     font-weight: 700;
     font-size: 16px;
     text-decoration: none;
-    margin-bottom: 20px;
-    transition: opacity 0.3s;
+    padding: 12px 24px;
+    border-radius: 100px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s;
 }
-.home-contact-link:hover { opacity: 0.8; }
+.home-contact-link:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--primary);
+    box-shadow: 0 0 30px var(--primary-glow);
+    transform: translateY(-2px);
+}
 
-/* --- Phone Visual --- */
+/* =========================================
+   PHONE VISUAL
+   ========================================= */
 .home-visual-section {
     display: flex;
     justify-content: center;
@@ -435,7 +236,7 @@ body.home-page {
     position: relative;
     width: 100%;
     max-width: 500px;
-    height: 520px;
+    height: 560px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -443,116 +244,130 @@ body.home-page {
 
 .home-phone {
     width: 230px;
-    height: 460px;
-    background: #000;
-    border-radius: 38px;
-    border: 7px solid #1a1a24;
+    height: 480px;
+    background: linear-gradient(180deg, #1a1d28 0%, #0a0d16 100%);
+    border-radius: 40px;
+    border: 1px solid rgba(140, 180, 255, 0.2);
     box-shadow:
-        0 0 60px rgba(139, 92, 246, 0.55),
-        0 0 120px rgba(139, 92, 246, 0.25),
-        inset 0 0 20px rgba(139, 92, 246, 0.15);
+        0 0 80px rgba(14, 165, 233, 0.4),
+        0 0 160px rgba(14, 165, 233, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -20px 40px rgba(0, 0, 0, 0.6);
     padding: 15px 10px;
     position: relative;
     z-index: 5;
 }
 
 .home-phone-screen {
-    background: linear-gradient(180deg, #151520 0%, #0a0a0f 100%);
+    background: linear-gradient(180deg, rgba(26, 29, 40, 0.9) 0%, rgba(10, 13, 22, 0.95) 100%);
     height: 100%;
-    border-radius: 24px;
-    padding: 22px 12px;
+    border-radius: 28px;
+    padding: 20px 12px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .home-app-row {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 12px 14px;
-    border-radius: 12px;
-    font-size: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 11px 14px;
+    border-radius: 14px;
+    font-size: 13px;
     font-weight: 600;
     color: white;
     text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
 }
-
 .home-app-row:hover {
-    background: rgba(139, 92, 246, 0.15);
-    transform: translateX(3px);
+    background: rgba(14, 165, 233, 0.15);
+    border-color: rgba(14, 165, 233, 0.4);
+    transform: translateX(4px);
 }
 
-.home-app-row:nth-child(1) i { color: #ff2d55; }
-.home-app-row:nth-child(2) i { color: #1db954; }
-.home-app-row:nth-child(3) i { color: #fffc00; }
-.home-app-row:nth-child(4) i { color: #e50914; }
-.home-app-row:nth-child(5) i { color: #ff0000; }
+.home-app-row img {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.1));
+    flex-shrink: 0;
+}
 
-/* --- Floating Icons --- */
+.home-app-row i {
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+.home-app-row:nth-child(1) i { color: var(--apple); }
+.home-app-row:nth-child(2) i { color: var(--spotify); }
+.home-app-row:nth-child(3) i { color: var(--snapchat); }
+.home-app-row:nth-child(4) i { color: var(--netflix); }
+.home-app-row:nth-child(5) i { color: var(--prime); }
+.home-app-row:nth-child(6) i { color: var(--youtube); }
+
+/* Floating Icons — Glass pods with brand glow */
 .home-float {
     position: absolute;
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
+    width: 62px;
+    height: 62px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    font-size: 26px;
     z-index: 10;
-    animation: homeFloat 3.5s ease-in-out infinite;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border-strong);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    animation: floatGlass 4s ease-in-out infinite;
 }
 
-@keyframes homeFloat {
+.home-float img {
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+@keyframes floatGlass {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    50% { transform: translateY(-14px); }
 }
 
-.home-float-apple {
-    background: #ff2d55; color: white;
-    top: 30px; left: 0; animation-delay: 0s;
-}
-.home-float-spotify {
-    background: #1db954; color: white;
-    top: 60px; right: 10px; animation-delay: 0.5s;
-}
-.home-float-snapchat {
-    background: #fffc00; color: black;
-    bottom: 130px; right: 0; animation-delay: 1s;
-}
-.home-float-netflix {
-    background: #000; color: #e50914;
-    border: 2px solid #e50914;
-    bottom: 60px; left: 10px; animation-delay: 1.5s;
-}
-.home-float-youtube {
-    background: #ff0000; color: white;
-    bottom: 20px; right: 40px; animation-delay: 2s;
-}
+.home-float-apple    { top: 30px; left: 0; color: var(--apple); box-shadow: 0 10px 40px rgba(255, 45, 85, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2); animation-delay: 0s; }
+.home-float-spotify  { top: 60px; right: 10px; color: var(--spotify); box-shadow: 0 10px 40px rgba(29, 185, 84, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2); animation-delay: 0.6s; }
+.home-float-snapchat { bottom: 140px; right: 0; color: var(--snapchat); box-shadow: 0 10px 40px rgba(255, 252, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2); animation-delay: 1.2s; }
+.home-float-netflix  { bottom: 60px; left: 10px; color: var(--netflix); box-shadow: 0 10px 40px rgba(229, 9, 20, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2); animation-delay: 1.8s; }
+.home-float-youtube  { bottom: 20px; right: 40px; color: var(--youtube); box-shadow: 0 10px 40px rgba(255, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2); animation-delay: 2.4s; }
 
-/* --- Services Grid --- */
+/* =========================================
+   SERVICES GRID — Glass Tiles
+   ========================================= */
 .home-services {
-    padding: 40px 20px 80px;
+    padding: 40px 20px 100px;
     max-width: 900px;
     margin: 0 auto;
 }
 
 .home-section-title {
     text-align: center;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 800;
     margin-bottom: 8px;
+    letter-spacing: -0.5px;
 }
 
 .home-section-sub {
     text-align: center;
     color: var(--text-muted);
     font-size: 14px;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 
 .home-services-grid {
@@ -565,57 +380,74 @@ body.home-page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding: 22px 12px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
+    gap: 14px;
+    padding: 24px 14px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 22px;
     text-decoration: none;
     color: white;
     font-weight: 600;
     font-size: 13px;
-    transition: transform 0.25s, border-color 0.25s, background 0.25s;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    position: relative;
+    overflow: hidden;
+}
+
+.home-tile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.15), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s;
 }
 
 .home-tile:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-btn);
-    background: rgba(139, 92, 246, 0.08);
-    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.2);
+    transform: translateY(-6px);
+    border-color: var(--glass-border-strong);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        0 0 45px var(--primary-glow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
+.home-tile:hover::before { opacity: 1; }
 
 .home-tile-icon {
-    width: 55px;
-    height: 55px;
-    border-radius: 14px;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 28px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+}
+.home-tile:hover .home-tile-icon {
+    transform: scale(1.08);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.home-tile-apple { background: rgba(255, 45, 85, 0.12); }
-.home-tile-spotify { background: rgba(29, 185, 84, 0.12); color: #1db954; }
-.home-tile-snapchat { background: rgba(255, 252, 0, 0.12); color: #fffc00; }
-.home-tile-icloud { background: rgba(0, 122, 255, 0.12); color: #007aff; }
-.home-tile-netflix { background: rgba(229, 9, 20, 0.12); }
-.home-tile-youtube { background: rgba(255, 0, 0, 0.12); color: #ff0000; }
-.home-tile-prime { background: rgba(0, 168, 225, 0.15); color: #00A8E1; }
+.home-tile > span { position: relative; z-index: 1; }
 
-/* --- Mobile Tweaks --- */
-@media (max-width: 600px) {
-    .home-visual-wrapper { height: 460px; }
-    .home-phone { width: 200px; height: 400px; }
-    .home-app-row { padding: 10px 12px; font-size: 13px; }
-    .home-float { width: 50px; height: 50px; font-size: 22px; }
-    .home-services-grid { grid-template-columns: repeat(2, 1fr); }
-}
+.home-tile-apple    .home-tile-icon { color: var(--apple); }
+.home-tile-spotify  .home-tile-icon { color: var(--spotify); }
+.home-tile-snapchat .home-tile-icon { color: var(--snapchat); }
+.home-tile-icloud   .home-tile-icon { color: var(--icloud); }
+.home-tile-netflix  .home-tile-icon { color: var(--netflix); }
+.home-tile-youtube  .home-tile-icon { color: var(--youtube); }
+.home-tile-prime    .home-tile-icon { color: var(--prime); }
 
 /* =========================================
-   DETAIL PAGE STYLES
+   DETAIL PAGE
    ========================================= */
-
 .detail-page {
     padding: 40px 20px 80px;
     max-width: 640px;
@@ -631,17 +463,44 @@ body.home-page {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 25px;
-    transition: color 0.2s;
+    padding: 8px 16px;
+    border-radius: 100px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s;
+}
+.back-link:hover {
+    color: white;
+    border-color: var(--glass-border-strong);
+    transform: translateX(-3px);
 }
 
-.back-link:hover { color: var(--primary-btn); }
-
 .detail-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    padding: 32px;
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-card::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 200px;
+    background: radial-gradient(circle, var(--primary-glow), transparent 70%);
+    filter: blur(40px);
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .detail-header {
@@ -650,27 +509,39 @@ body.home-page {
     gap: 18px;
     margin-bottom: 30px;
     padding-bottom: 25px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--glass-border);
+    position: relative;
+    z-index: 1;
 }
 
 .detail-icon {
-    width: 65px;
-    height: 65px;
-    border-radius: 16px;
+    width: 68px;
+    height: 68px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 32px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    flex-shrink: 0;
 }
 
-.detail-icon-apple { background: rgba(255, 45, 85, 0.12); }
+.detail-icon-apple    { color: var(--apple); box-shadow: 0 0 30px rgba(255, 45, 85, 0.25); }
+.detail-icon-spotify  { color: var(--spotify); box-shadow: 0 0 30px rgba(29, 185, 84, 0.25); }
+.detail-icon-snapchat { color: var(--snapchat); box-shadow: 0 0 30px rgba(255, 252, 0, 0.2); }
+.detail-icon-icloud   { color: var(--icloud); box-shadow: 0 0 30px rgba(0, 122, 255, 0.25); }
+.detail-icon-netflix  { color: var(--netflix); box-shadow: 0 0 30px rgba(229, 9, 20, 0.25); }
+.detail-icon-youtube  { color: var(--youtube); box-shadow: 0 0 30px rgba(255, 0, 0, 0.25); }
+.detail-icon-prime    { color: var(--prime); box-shadow: 0 0 30px rgba(0, 168, 225, 0.25); }
 
 .detail-header h1 {
     font-size: 24px;
     font-weight: 800;
     margin-bottom: 2px;
+    letter-spacing: -0.5px;
 }
-
 .detail-header p {
     color: var(--text-muted);
     font-size: 13px;
@@ -681,53 +552,204 @@ body.home-page {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
 }
 
-/* Reuse the same .option-btn, .card-note, .order-btn styles from earlier */
-
-/* Mobile */
-@media (max-width: 600px) {
-    .detail-card { padding: 22px 18px; }
-    .detail-header h1 { font-size: 20px; }
-    .detail-icon { width: 55px; height: 55px; }
+/* =========================================
+   OPTION BUTTONS — Glass Pills
+   ========================================= */
+.option-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    padding: 14px 20px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    font-family: inherit;
+    text-align: left;
 }
 
-/* --- DETAIL PAGE ICON COLORS --- */
-.detail-icon-spotify { background: rgba(29, 185, 84, 0.12); color: #1db954; }
-.detail-icon-snapchat { background: rgba(255, 252, 0, 0.12); color: #fffc00; }
-.detail-icon-icloud { background: rgba(0, 122, 255, 0.12); color: #007aff; }
-.detail-icon-netflix { background: rgba(229, 9, 20, 0.12); }
-.detail-icon-youtube { background: rgba(255, 0, 0, 0.12); color: #ff0000; }
-.detail-icon-prime { background: rgba(0, 168, 225, 0.15); color: #00A8E1; }
-body::before {
-    content: '';
-    position: fixed;
-    inset: -50%;
-    z-index: -1;
-    background:
-        radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.18), transparent 42%),
-        radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.14), transparent 42%),
-        radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.14), transparent 45%);
-    animation: auroraShift 25s ease-in-out infinite alternate;
-    filter: blur(60px);
-    pointer-events: none;
-}
-/* --- App row icons (images + FontAwesome) --- */
-.home-app-row img {
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.1));
-    flex-shrink: 0;
+.option-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--glass-border-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.home-app-row i {
-    width: 20px;
+.option-btn:active { transform: translateY(0); }
+
+.price {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 4px 12px;
+    background: rgba(14, 165, 233, 0.15);
+    border-radius: 100px;
+    border: 1px solid rgba(14, 165, 233, 0.28);
+}
+
+/* =========================================
+   CARD NOTES — Glass Info Bars
+   ========================================= */
+.card-note {
+    font-size: 12px;
+    color: #facc15;
+    background: rgba(250, 204, 21, 0.08);
+    border: 1px solid rgba(250, 204, 21, 0.2);
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+.card-note i { font-size: 15px; }
+
+.netflix-note    { color: var(--netflix); background: rgba(229, 9, 20, 0.08); border-color: rgba(229, 9, 20, 0.2); }
+.snapchat-note   { color: var(--snapchat); background: rgba(255, 252, 0, 0.06); border-color: rgba(255, 252, 0, 0.15); }
+.icloud-note     { color: var(--icloud); background: rgba(0, 122, 255, 0.08); border-color: rgba(0, 122, 255, 0.2); }
+.spotify-note    { color: var(--spotify); background: rgba(29, 185, 84, 0.08); border-color: rgba(29, 185, 84, 0.2); }
+.youtube-note    { color: var(--youtube); background: rgba(255, 0, 0, 0.08); border-color: rgba(255, 0, 0, 0.2); }
+.primevideo-note { color: var(--prime); background: rgba(0, 168, 225, 0.08); border-color: rgba(0, 168, 225, 0.2); }
+
+/* =========================================
+   ORDER BUTTONS — Glossy Pills
+   ========================================= */
+.order-btn {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 10px 30px rgba(0, 0, 0, 0.35);
+    font-family: inherit;
+}
+
+.order-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+.order-btn:active { transform: translateY(0); }
+
+.btn-apple      { background: linear-gradient(180deg, #ff5e7e 0%, #ff2d55 100%); }
+.btn-spotify    { background: linear-gradient(180deg, #1ed760 0%, #1db954 100%); color: #000; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 30px rgba(29, 185, 84, 0.3); }
+.btn-snapchat   { background: linear-gradient(180deg, #fffc00 0%, #e8e600 100%); color: #000; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 10px 30px rgba(255, 252, 0, 0.3); }
+.btn-icloud     { background: linear-gradient(180deg, #3b9eff 0%, #007aff 100%); }
+.btn-netflix    { background: linear-gradient(180deg, #ff2233 0%, #e50914 100%); }
+.btn-youtube    { background: linear-gradient(180deg, #ff2222 0%, #ff0000 100%); }
+.btn-primevideo { background: linear-gradient(180deg, #1ec0f0 0%, #00a8e1 100%); }
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
     text-align: center;
-    flex-shrink: 0;
+    padding: 60px 20px 30px;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 80px;
+    background: rgba(18, 20, 28, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
-/* Row color for each service (for the icons) */
-.home-app-row:nth-child(1) i { color: #ff2d55; }   /* Apple Music */
-.home-app-row:nth-child(2) i { color: #1db954; }   /* Spotify */
-.home-app-row:nth-child(3) i { color: #fffc00; }   /* Snapchat */
-.home-app-row:nth-child(4) i { color: #e50914; }   /* Netflix */
-.home-app-row:nth-child(5) i { color: #00a8e1; }   /* Prime Video */
-.home-app-row:nth-child(6) i { color: #ff0000; }   /* YouTube */
+.footer-content h3 {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+.footer-content p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+.footer-contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+.footer-contact-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 12px 24px;
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+.footer-contact-links a:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-strong);
+    transform: translateY(-2px);
+}
+.footer-contact-links i {
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 12px;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 24px;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 900px) {
+    .header-contact { display: none; }
+}
+
+@media (max-width: 768px) {
+    header { padding: 12px 4%; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    nav { order: 3; width: 100%; justify-content: center; }
+    nav a { padding: 6px 12px; font-size: 13px; }
+
+    .home-trust-badges { gap: 8px; }
+    .home-badge { font-size: 12px; padding: 8px 14px; }
+
+    .home-visual-wrapper { height: 480px; }
+    .home-phone { width: 200px; height: 420px; border-radius: 34px; }
+    .home-float { width: 52px; height: 52px; font-size: 22px; border-radius: 16px; }
+
+    .home-services-grid { grid-template-columns: repeat(2, 1fr); }
+    .home-section-title { font-size: 24px; }
+
+    .detail-card { padding: 24px 20px; border-radius: 24px; }
+    .detail-header h1 { font-size: 20px; }
+    .detail-icon { width: 58px; height: 58px; }
+
+    .logo-kd, .logo-dealz { font-size: 22px; }
+    .crown-icon { font-size: 12px; }
+}
